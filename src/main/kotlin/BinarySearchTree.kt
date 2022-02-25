@@ -1,5 +1,3 @@
-import kotlin.math.max
-
 class Node<T>(
     val key: Comparable<T>,
     var left: Node<T>? = null, var right: Node<T>? = null
@@ -19,7 +17,7 @@ class Node<T>(
     private fun height(node: Node<T>?): Int {
         if (node == null)
             return 0
-        return max(height(node.left), height(node.right)) + 1
+        return maxOf(height(node.left), height(node.right)) + 1
     }
 
     val height: Int
@@ -34,11 +32,10 @@ class Node<T>(
     val nodeCount: Int
         get() = nodeCount(this)
 
+    @Suppress("UNCHECKED_CAST")
     fun lookup(key: Comparable<T>): MutableList<Any>? = when {
         (key == this.key) -> values
-        @Suppress("UNCHECKED_CAST")
         (key < this.key as T && left != null) -> left!!.lookup(key)
-        @Suppress("UNCHECKED_CAST")
         (key > this.key as T && right != null) -> right!!.lookup(key)
         else -> null
     }
@@ -49,13 +46,13 @@ class BST<T> {
 
     fun addAll(key: Comparable<T>, values: Collection<Any>) = add(key, values, true)
 
+    @Suppress("UNCHECKED_CAST")
     fun add(key: Comparable<T>, value: Any, flattenCollection: Boolean = false) {
         if (root == null)
             root = Node(key)
 
         var curr = root!!
         while (true) {
-            @Suppress("UNCHECKED_CAST")
             if (key < curr.key as T) {
                 if (curr.left == null) curr.left = Node(key)
                 curr = curr.left!!
@@ -68,12 +65,10 @@ class BST<T> {
             }
         }
 
-        if (flattenCollection) {
-            @Suppress("UNCHECKED_CAST")
+        if (flattenCollection)
             curr.values.addAll(value as Collection<Any>)
-        } else {
+        else
             curr.values.add(value)
-        }
     }
 
     private fun dump(node: Node<T>?) {
