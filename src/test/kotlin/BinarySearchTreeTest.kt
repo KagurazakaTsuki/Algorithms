@@ -9,16 +9,16 @@ class BinarySearchTreeTest {
     fun addTest() {
         val bst = BST<Int>()
 
-        for (key in (0..23).toList().shuffled()) {
+        for (key in (0..25).toList().shuffled()) {
             bst.add(key, alphabet[key])
         }
 
-        for (key in (0..23).toList().shuffled()) {
+        for (key in (0..25).toList().shuffled()) {
             assertEquals(1, bst.root?.lookup(key)?.size)
             assertEquals(alphabet[key], bst.root?.lookup(key)?.first())
         }
-        assertEquals(24, bst.root?.size)
-        assertEquals(24, bst.root?.nodeCount)
+        assertEquals(26, bst.root?.size)
+        assertEquals(26, bst.root?.nodeCount)
 
         bst.root?.height.also { println("BST height: $it") }
         bst.dump()
@@ -28,17 +28,17 @@ class BinarySearchTreeTest {
     fun addAllTest() {
         val bst = BST<Int>()
 
-        for (key in (0..23).toList().shuffled()) {
+        for (key in (0..25).toList().shuffled()) {
             bst.addAll(key, listOf(alphabet[key], alphabetLower[key]))
         }
 
-        for (key in (0..23).toList().shuffled()) {
+        for (key in (0..25).toList().shuffled()) {
             assertEquals(2, bst.root?.lookup(key)?.size)
             assertEquals(listOf(alphabet[key], alphabetLower[key]), bst.root?.lookup(key)?.toList())
         }
 
-        assertEquals(48, bst.root?.size)
-        assertEquals(24, bst.root?.nodeCount)
+        assertEquals(52, bst.root?.size)
+        assertEquals(26, bst.root?.nodeCount)
 
         bst.root?.height.also { println("BST height: $it") }
         bst.dump()
