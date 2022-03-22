@@ -4,4 +4,6 @@ This repo contains a list of algorithms I learned in various courses rewritten i
 
 [BinarySearchTree.kt](/src/main/kotlin/BinarySearchTree.kt) ([Test](/src/test/kotlin/BinarySearchTreeTest.kt))
 
-[DFS.kt](/src/main/kotlin/DFS.kt) ([Test](/src/test/kotlin/DFSTest.kt))
+[DepthFirstSearch.kt](/src/main/kotlin/DepthFirstSearch.kt) ([Test](/src/test/kotlin/DepthFirstSearchTest.kt))
+
+[BreadthFirstSearch.kt](/src/main/kotlin/BreadthFirstSearch.kt) ([Test](/src/test/kotlin/BreadthFirstSearchTest.kt))
