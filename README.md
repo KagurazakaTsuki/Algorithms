@@ -8,4 +8,6 @@ This repo contains a list of algorithms I learned in various courses rewritten i
 
 [BreadthFirstSearch.kt](/src/main/kotlin/BreadthFirstSearch.kt) ([Test](/src/test/kotlin/BreadthFirstSearchTest.kt))
 
+[BinarySearch.kt](/src/main/kotlin/BinarySearch.kt) ([Test](/src/test/kotlin/BinarySearchTest.kt))
+
 [MergeSort.kt](/src/main/kotlin/MergeSort.kt) ([Test](/src/test/kotlin/MergeSortTest.kt))
